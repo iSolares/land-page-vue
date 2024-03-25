@@ -1,10 +1,7 @@
 <template>
-  <v-container class="d-flex flex-column px-0 w-100">
-      <p class="text-center">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia eaque
-        illum officiis magni commodi tenetur quos assumenda fuga hic, accusantium,
-        cupiditate cumque minima earum quia deserunt quidem itaque quaerat amet?
-      </p>
+    <div class="h-100 w-100">
+        <v-img class="w-100 position-absolute" src="../../assets/img/iniciodapagina.png"/>
+            <v-img class="w-100 size-init-title" src="../../assets/img/iniciodapaginatitulo.png"/>
       <v-row>
           <v-col cols="12">
         <v-carousel
@@ -14,30 +11,58 @@
           interval="3000"
           hide-delimiter-background
         >
-          <v-carousel-item v-for="(slide, i) in slides" :key="i">
-            <v-sheet :color="colors[i]" height="100%" width="100%">
-              <div class="d-flex fill-height justify-center align-center">
-                <div class="text-h2">{{ slide }} Slide</div>
-              </div>
-            </v-sheet>
+          <v-carousel-item sizes="1000" src="../../assets/img/carrossel1.png">
+          </v-carousel-item>
+          <v-carousel-item src="../../assets/img/carrossel2.png">
+          </v-carousel-item>
+          <v-carousel-item src="../../assets/img/carrossel3.png">
+          </v-carousel-item>
+          <v-carousel-item src="../../assets/img/carrossel4.png">
+          </v-carousel-item>
+          <v-carousel-item src="../../assets/img/carrossel5.png">
+          </v-carousel-item>
+          <v-carousel-item src="../../assets/img/carrossel6.png">
+          </v-carousel-item>
+          <v-carousel-item src="../../assets/img/carrossel7.png">
           </v-carousel-item>
         </v-carousel>
       </v-col>
     </v-row>
-  </v-container>
+</div>
+
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-const slides: string[] = ref(["First", "Second", "Third", "Fourth", "Fifth"]);
-const colors: string[] = ref([
-  "indigo",
-  "warning",
-  "pink darken-2",
-  "red lighten-1",
-  "deep-purple accent-4",
+const items = ref([
+    {
+        src:'../../assets/img/carrossel1.png'
+    },
+    {
+        src:"../../assets/img/carrossel2.png"
+    },
+    {
+        src:"../../assets/img/carrossel3.png"
+    },
+    {
+        src:"../../assets/img/carrossel4.png"
+    },
+    {
+        src:"../../assets/img/carrossel5.png"
+    },
+    {
+        src:"../../assets/img/carrossel6.png"
+    },
+    {
+        src:"../../assets/img/carrossel7.png"
+    },
+   
 ]);
+
 </script>
 <style scoped>
+.size-init-title {
+    padding-top: 500px ;
+}
 
 </style>
