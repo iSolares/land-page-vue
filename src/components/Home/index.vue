@@ -4,12 +4,14 @@
       <v-col cols="12">
         <v-img
           eager
+          cover
           class="w-100 position-absolute"
           src="../../assets/img/iniciodapagina.png"
         />
         <v-img
           eager
-          class="w-100 size-init-title"
+          width="100%"
+          class=" size-init-title"
           src="../../assets/img/iniciodapaginatitulo.png"
         />
       </v-col>
@@ -18,6 +20,7 @@
     <v-row>
       <v-col cols="12">
         <v-carousel
+        
           height="100%"
           show-arrows="hover"
           cycle
@@ -26,33 +29,41 @@
         >
           <v-carousel-item
             eager
+            cover
             src="../../assets/img/carrossel1.png"
           ></v-carousel-item>
           <v-carousel-item
+            cover
             eager
             src="../../assets/img/carrossel2.png"
           ></v-carousel-item>
           <v-carousel-item
             eager
+            cover
             src="../../assets/img/carrossel3.png"
           ></v-carousel-item>
           <v-carousel-item
             eager
+            cover
             src="../../assets/img/carrossel4.png"
           ></v-carousel-item>
           <v-carousel-item
             eager
+            cover
             src="../../assets/img/carrossel5.png"
           ></v-carousel-item>
           <v-carousel-item
             eager
+            cover
             src="../../assets/img/carrossel6.png"
           ></v-carousel-item>
           <v-carousel-item
             eager
+            cover
             src="../../assets/img/carrossel7.png"
           ></v-carousel-item>
         </v-carousel>
+      
       </v-col>
     </v-row>
     <v-row>
@@ -96,7 +107,7 @@
         </v-img>
       </v-col>
     </v-row>
-    <v-row>
+    <v-row class="w-100">
       <v-col class="pa-0" cols="2">
         <v-img
           height="700"
@@ -156,7 +167,12 @@
       </v-col>
       <v-col cols="12">
         <div id="map">
-          <l-map ref="map" v-model:zoom="zoom" :center="[47.41322, -1.219482]">
+          <l-map
+            ref="map"
+            v-model:zoom="zoom"
+            m
+            :center="[-12.98995518060895, -38.45681316447221]"
+          >
             <l-tile-layer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               layer-type="base"
@@ -164,6 +180,96 @@
             ></l-tile-layer>
           </l-map>
         </div>
+      </v-col>
+      <v-col cols="12">
+        <v-img eager height="100" src="../../assets/img/endereçopromapa.png" />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col class="pa-0" cols="12">
+        <v-img
+          cover
+          eager
+          class="align-center"
+          src="../../assets/img/fundofaçasuareserva.png"
+        >
+          <v-row>
+            <v-col cols="12">
+              <v-img
+                cover
+                eager
+                src="../../assets/img/façasuareservatitulo.png"
+              />
+              <v-img
+                eager
+                height="100"
+                src="../../assets/img/entreemcontatobotao.png"
+              />
+            </v-col>
+          </v-row>
+        </v-img>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col class="pa-0" cols="12">
+        <v-img class="d-flex align-center" src="../../assets/img/finaldepáginafundobranco.png">
+          <v-col
+            class="d-flex justify-center justify-space-evenly flex-row"
+            cols="12"
+          >
+            <v-col class="pa-0 my-auto" cols="3">
+              <v-img
+              cover
+                height="465"
+                src="../../assets/img/finaldepaginaperfiljoks.png"
+              />
+            </v-col>
+            <v-col class="my-auto pb-16" cols="3">
+              <v-img
+                cover
+                width="300"
+                eager
+                class="mb-16"
+                src="../../assets/img/finaldepaginajokstitulo.png"
+              />
+              <v-img
+                cover
+                eager
+                class="mt-7 mb-10"
+                width="200"
+                src="../../assets/img/finaldepaginanos.png"
+              />
+              <v-img
+                cover
+                width="300"
+                eager
+                class="mb-10"
+                src="../../assets/img/finaldepagianhorário.png"
+              />
+              <v-img
+                width="200"
+                cover
+                eager
+                class="mb-10"
+                src="../../assets/img/finaldepaginafeedback.png"
+              />
+              <v-img
+              width="250"
+              eager
+              cover
+              src="../../assets/img/finaldepaginalocal.png"
+              
+            />
+            </v-col>
+            <v-col class="my-auto" cols="3">
+              <v-img
+                eager
+                height="50"
+                src="../../assets/img/finaldepaginainsta.png"
+              />
+            </v-col>
+          </v-col>
+        </v-img>
       </v-col>
     </v-row>
   </div>
@@ -173,19 +279,17 @@
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
 import { ref } from "vue";
-
-const zoom = ref(2);
+const zoom = ref(18);
 </script>
-<style scoped>
+<style>
 #map {
   margin-left: auto;
   margin-right: auto;
   width: 1400px;
-  height: 400px;
-  margin-bottom: 100px;
+  height: 600px;
 }
 .size-init-title {
-  padding-top: 1100px;
+  margin-top: 70vh;
 }
 
 .position-arrow-left {
@@ -194,6 +298,11 @@ const zoom = ref(2);
 }
 
 .position-arrow-right {
-  margin-left: 10vh;
+  margin-left: 10.1vh;
+}
+
+.center {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 </style>
