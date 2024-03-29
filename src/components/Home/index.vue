@@ -159,7 +159,7 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <v-img eager src="../../assets/img/localizaçãobotao.png" />
+        <v-img eager cover src="../../assets/img/localizaçãobotao.png" />
       </v-col>
       <v-col cols="12">
         <div class="map">
@@ -218,7 +218,11 @@
             cols="12"
           >
             <v-col class="pa-0 my-auto disable-item" cols="3">
-              <v-img cover src="../../assets/img/finaldepaginaperfiljoks.png" />
+              <v-img
+                eager
+                cover
+                src="../../assets/img/finaldepaginaperfiljoks.png"
+              />
             </v-col>
             <v-col
               class="my-auto pb-16"
@@ -319,6 +323,7 @@ const zoom = ref(18);
     flex-direction: column;
   }
 }
+
 @media (min-width: 600px) {
   .disable-instagram-end {
     display: none;
