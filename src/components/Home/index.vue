@@ -11,7 +11,7 @@
         <v-img
           eager
           width="100%"
-          class=" size-init-title"
+          class="size-init-title"
           src="../../assets/img/iniciodapaginatitulo.png"
         />
       </v-col>
@@ -20,7 +20,6 @@
     <v-row>
       <v-col cols="12">
         <v-carousel
-        
           height="100%"
           show-arrows="hover"
           cycle
@@ -63,29 +62,28 @@
             src="../../assets/img/carrossel7.png"
           ></v-carousel-item>
         </v-carousel>
-      
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12">
+      <v-col class="pa-0" cols="12">
         <v-img
           eager
           cover
           class="w-100 h-100"
           src="../../assets/img/horariodefuncionamentofundo.png"
         >
-          <v-row class="my-16">
-            <v-col cols="6">
+          <v-row class="my-10">
+            <v-col class="pr-0 pt-0 pb-0" cols="6">
               <v-img
                 cover
                 eager
-                class="h-100 w-100"
+                class="h-100 mt-4 w-100"
                 height="1600"
                 src="../../assets/img/coringahorario.png"
               >
               </v-img>
             </v-col>
-            <v-col class="flex-column" cols="6">
+            <v-col class="flex-column pt-0 pl-0 pb-0" cols="6">
               <v-img eager src="../../assets/img/horariotitulo.png" />
               <v-img
                 eager
@@ -107,10 +105,9 @@
         </v-img>
       </v-col>
     </v-row>
-    <v-row class="w-100">
-      <v-col class="pa-0" cols="2">
+    <v-row class="">
+      <v-col class="pa-0 d-flex justify-end" cols="2">
         <v-img
-          height="700"
           width="220"
           eager
           class="position-arrow-left"
@@ -121,12 +118,11 @@
         <v-img eager src="../../assets/img/reservatitulo.png" />
         <v-img eager src="../../assets/img/precisareservar_texto.png" />
       </v-col>
-      <v-col class="pa-0" cols="2">
+      <v-col class="pa-0 d-flex justify-end" cols="2">
         <v-img
-          height="700"
           width="220"
           eager
-          class="position-arrow-right d-flex justify-end"
+          class="position-arrow-right"
           src="../../assets/img/precisareservarcanto.png"
         />
       </v-col>
@@ -166,7 +162,7 @@
         <v-img eager src="../../assets/img/localizaçãobotao.png" />
       </v-col>
       <v-col cols="12">
-        <div id="map">
+        <div class="map">
           <l-map
             ref="map"
             v-model:zoom="zoom"
@@ -182,7 +178,7 @@
         </div>
       </v-col>
       <v-col cols="12">
-        <v-img eager height="100" src="../../assets/img/endereçopromapa.png" />
+        <v-img eager src="../../assets/img/endereçopromapa.png" />
       </v-col>
     </v-row>
     <v-row>
@@ -212,30 +208,38 @@
     </v-row>
     <v-row>
       <v-col class="pa-0" cols="12">
-        <v-img class="d-flex align-center" src="../../assets/img/finaldepáginafundobranco.png">
+        <v-img
+          class="d-flex align-center"
+          cover
+          src="../../assets/img/finaldepáginafundobranco.png"
+        >
           <v-col
-            class="d-flex justify-center justify-space-evenly flex-row"
+            class="d-flex justify-center appear-item justify-space-evenly"
             cols="12"
           >
-            <v-col class="pa-0 my-auto" cols="3">
-              <v-img
-              cover
-                height="465"
-                src="../../assets/img/finaldepaginaperfiljoks.png"
-              />
+            <v-col class="pa-0 my-auto disable-item" cols="3">
+              <v-img cover src="../../assets/img/finaldepaginaperfiljoks.png" />
             </v-col>
-            <v-col class="my-auto pb-16" cols="3">
+            <v-col
+              class="my-auto pb-16"
+              cols="6"
+              sm="3"
+              md="3"
+              lg="3"
+              xl="3"
+              xxl="3"
+            >
               <v-img
                 cover
                 width="300"
                 eager
-                class="mb-16"
+                class="margins-end-prahses align-center"
                 src="../../assets/img/finaldepaginajokstitulo.png"
               />
               <v-img
                 cover
                 eager
-                class="mt-7 mb-10"
+                class="mt-7 margins-end-prahses"
                 width="200"
                 src="../../assets/img/finaldepaginanos.png"
               />
@@ -243,28 +247,36 @@
                 cover
                 width="300"
                 eager
-                class="mb-10"
+                class="margins-end-prahses"
                 src="../../assets/img/finaldepagianhorário.png"
               />
               <v-img
                 width="200"
                 cover
                 eager
-                class="mb-10"
+                class="margins-end-prahses"
                 src="../../assets/img/finaldepaginafeedback.png"
               />
               <v-img
-              width="250"
-              eager
-              cover
-              src="../../assets/img/finaldepaginalocal.png"
-              
-            />
-            </v-col>
-            <v-col class="my-auto" cols="3">
-              <v-img
+                width="250"
                 eager
-                height="50"
+                cover
+                class="margins-end-prahses"
+                src="../../assets/img/finaldepaginalocal.png"
+              />
+              <div class="disable-instagram-end">
+                <v-img
+                  cover
+                  eager
+                  width="300"
+                  src="../../assets/img/finaldepaginainsta.png"
+                />
+              </div>
+            </v-col>
+            <v-col class="my-auto disable-item" cols="3">
+              <v-img
+                cover
+                eager
                 src="../../assets/img/finaldepaginainsta.png"
               />
             </v-col>
@@ -282,23 +294,54 @@ import { ref } from "vue";
 const zoom = ref(18);
 </script>
 <style>
-#map {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1400px;
-  height: 600px;
-}
-.size-init-title {
-  margin-top: 70vh;
-}
+@media (max-width: 600px) {
+  .disable-item {
+    display: none;
+  }
+  .margins-end-prahses {
+    margin-bottom: 3vh;
+  }
 
-.position-arrow-left {
-  margin-top: 1px;
-  margin-left: 1vh;
-}
+  .size-init-title {
+    margin-top: 18vh;
+  }
 
-.position-arrow-right {
-  margin-left: 10.1vh;
+  .map {
+    margin-left: auto;
+    margin-right: auto;
+    width: 35vh;
+    height: 20vh;
+  }
+
+  .change-direction {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+@media (min-width: 600px) {
+  .disable-instagram-end {
+    display: none;
+  }
+
+  .map {
+    margin-left: auto;
+    margin-right: auto;
+    width: 140vh;
+    height: 60vh;
+  }
+
+  .size-init-title {
+    margin-top: 75vh;
+  }
+
+  .margins-end-prahses {
+    margin-bottom: 6vh;
+  }
+
+  .change-direction {
+    flex-direction: row;
+  }
 }
 
 .center {
