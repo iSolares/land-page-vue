@@ -5,63 +5,58 @@
         <v-img
           eager
           cover
-          class="w-100 position-absolute"
+          class="w-100"
           src="../../assets/img/iniciodapagina.png"
-        />
-        <v-img
-          eager
-          width="100%"
-          class="size-init-title"
-          src="../../assets/img/iniciodapaginatitulo.png"
         />
       </v-col>
     </v-row>
-
     <v-row>
       <v-col cols="12">
-        <v-carousel
-          height="100%"
-          show-arrows="hover"
-          cycle
-          interval="3000"
-          hide-delimiters
-        >
-          <v-carousel-item
-            eager
-            cover
-            src="../../assets/img/carrossel1.png"
-          ></v-carousel-item>
-          <v-carousel-item
-            cover
-            eager
-            src="../../assets/img/carrossel2.png"
-          ></v-carousel-item>
-          <v-carousel-item
-            eager
-            cover
-            src="../../assets/img/carrossel3.png"
-          ></v-carousel-item>
-          <v-carousel-item
-            eager
-            cover
-            src="../../assets/img/carrossel4.png"
-          ></v-carousel-item>
-          <v-carousel-item
-            eager
-            cover
-            src="../../assets/img/carrossel5.png"
-          ></v-carousel-item>
-          <v-carousel-item
-            eager
-            cover
-            src="../../assets/img/carrossel6.png"
-          ></v-carousel-item>
-          <v-carousel-item
-            eager
-            cover
-            src="../../assets/img/carrossel7.png"
-          ></v-carousel-item>
-        </v-carousel>
+        <v-img src="../../assets/img/finaldepáginafundobranco.png">
+          <v-carousel
+            height="100%"
+            show-arrows="hover"
+            cycle
+            interval="3000"
+            hide-delimiters
+          >
+            <v-carousel-item
+              eager
+              cover
+              src="../../assets/img/carrossel1.png"
+            ></v-carousel-item>
+            <v-carousel-item
+              cover
+              eager
+              src="../../assets/img/carrossel2.png"
+            ></v-carousel-item>
+            <v-carousel-item
+              eager
+              cover
+              src="../../assets/img/carrossel3.png"
+            ></v-carousel-item>
+            <v-carousel-item
+              eager
+              cover
+              src="../../assets/img/carrossel4.png"
+            ></v-carousel-item>
+            <v-carousel-item
+              eager
+              cover
+              src="../../assets/img/carrossel5.png"
+            ></v-carousel-item>
+            <v-carousel-item
+              eager
+              cover
+              src="../../assets/img/carrossel6.png"
+            ></v-carousel-item>
+            <v-carousel-item
+              eager
+              cover
+              src="../../assets/img/carrossel7.png"
+            ></v-carousel-item>
+          </v-carousel>
+        </v-img>
       </v-col>
     </v-row>
     <v-row>
