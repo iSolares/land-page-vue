@@ -12,7 +12,7 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <v-img src="../../assets/img/finaldepáginafundobranco.png">
+        <v-img eager src="../../assets/img/finaldepáginafundobranco.png">
           <v-carousel
             height="100%"
             show-arrows="hover"
@@ -68,17 +68,17 @@
           src="../../assets/img/horariodefuncionamentofundo.png"
         >
           <v-row class="my-10">
-            <v-col class="pr-0 pt-0 pb-0" cols="6">
+            <v-col class="pr-0 pt-0 pb-0" cols="4">
               <v-img
                 cover
                 eager
                 class="h-100 mt-4 w-100"
-                height="1600"
+                height="2000"
                 src="../../assets/img/coringahorario.png"
               >
               </v-img>
             </v-col>
-            <v-col class="flex-column pt-0 pl-0 pb-0" cols="6">
+            <v-col class="flex-column  pt-0 pl-0 pb-0" cols="8">
               <v-img eager src="../../assets/img/horariotitulo.png" />
               <v-img
                 eager
@@ -124,7 +124,7 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <img width="100%" src="../../assets/img/sobrenostitulo.png" />
+        <v-img width="100%" src="../../assets/img/sobrenostitulo.png" />
       </v-col>
       <v-col cols="12">
         <v-img eager src="../../assets/img/sobreajoksquadros.png" />
