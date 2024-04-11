@@ -184,17 +184,22 @@
           class="align-center"
           src="../../assets/img/fundofaçasuareserva.png"
         >
-          <v-row>
-            <v-col cols="12">
+        <v-row justify="center">
+            <v-col class="d-flex" cols="12 pt-10 pb-4">
               <v-img
                 cover
+                class="justify-center"
                 eager
                 src="../../assets/img/façasuareservatitulo.png"
               />
+            </v-col>
+            <v-col class="d-flex justify-center" cols="8 pa-0">
               <v-img
                 eager
+                class="justify-center"
                 height="100"
-                src="../../assets/img/entreemcontatobotao.png"
+                width="200"
+                src="../../assets/img/botao-reserve-aqui-NOVOArtboard-25.png"
               />
             </v-col>
           </v-row>
@@ -287,7 +292,6 @@
 </template>
 
 <script setup lang="ts">
-import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
 import { ref } from "vue";
 const zoom = ref(18);
