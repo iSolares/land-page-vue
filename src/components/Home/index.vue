@@ -184,7 +184,7 @@
           class="align-center"
           src="../../assets/img/fundofaçasuareserva.png"
         >
-          <v-row justify="center">
+        <v-row justify="center">
             <v-col class="d-flex" cols="12 pt-10 pb-4">
               <v-img
                 cover
