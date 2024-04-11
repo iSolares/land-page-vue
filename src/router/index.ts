@@ -2,7 +2,7 @@ import Home from '@/components/Home/index.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
-    path: "/land-page-vue",
+    path: "/",
     name: "Home",
     component: Home
   }
