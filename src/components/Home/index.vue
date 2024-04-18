@@ -210,7 +210,7 @@
     <v-dialog
       :model-value="isActive"
       @click:outside="isActive = false"
-        max-width="600"
+        max-width="750"
       >
     <FormReserve @init-reserve="initReserve" :isActive="isActive"/>
   </v-dialog>

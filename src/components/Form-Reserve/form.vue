@@ -48,12 +48,11 @@
             <v-text-field
             :rules="[required]"
               label="Data da Reserva"
-              type="password"
               v-model="FormattedDate"
+              type="datetime-local"
               variant="outlined"
             ></v-text-field>
           </v-col>
-
           <v-col cols="12" md="4" sm="6">
             <v-select
             :rules="[required]"
@@ -86,6 +85,7 @@
 import Swal from "sweetalert2"
 import { ref } from "vue";
 import axios from "axios";
+import { format }  from "date-fns"
 
 const emit = defineEmits(["initReserve"]);
 const Name = ref("");
@@ -102,6 +102,8 @@ const closeForm = () => {
 const submitForm = async():Promise<void> => {
   const cpfFormat = Cpf.value.replaceAll(/[.-]/g, "");
   const numberFormat = Phone.value.replaceAll(/[()-]/g, "");
+  const dateTimeFormat = format(FormattedDate, "Pp")
+  console.log(dateTimeFormat)
   const payload = {
     Name: Name.value,
     Email: Email.value,

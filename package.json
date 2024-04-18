@@ -12,8 +12,9 @@
   "dependencies": {
     "@mdi/font": "7.0.96",
     "core-js": "^3.34.0",
+    "date-fns": "^3.6.0",
     "roboto-fontface": "*",
-    "sweetalert2": "^11.10.8",
+    "sweetalert2": "^11.6.13",
     "v-mask": "^2.3.0",
     "vue": "^3.3.0",
     "vue-the-mask": "^0.11.1",
@@ -23,6 +24,7 @@
     "@babel/types": "^7.23.0",
     "@types/leaflet": "^1.9.8",
     "@types/node": "^20.10.0",
+    "@types/vue-the-mask": "^0.11.5",
     "@vitejs/plugin-vue": "^4.5.0",
     "@vue-leaflet/vue-leaflet": "^0.10.1",
     "@vue/eslint-config-typescript": "^12.0.0",
