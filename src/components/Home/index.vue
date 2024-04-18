@@ -196,7 +196,8 @@
             <v-col class="d-flex justify-center" cols="8 pa-0">
               <v-img
                 eager
-                class="justify-center"
+                @click="initReserve(true)"
+                class="justify-center reserve-button"
                 height="100"
                 width="200"
                 src="../../assets/img/botao-reserve-aqui-NOVOArtboard-25.png"
@@ -206,6 +207,13 @@
         </v-img>
       </v-col>
     </v-row>
+    <v-dialog
+      :model-value="isActive"
+      @click:outside="isActive = false"
+        max-width="600"
+      >
+    <FormReserve @init-reserve="initReserve" :isActive="isActive"/>
+  </v-dialog>
     <v-row>
       <v-col class="pa-0" cols="12">
         <v-img
@@ -294,7 +302,13 @@
 <script setup lang="ts">
 import { LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
 import { ref } from "vue";
+import FormReserve from "@/components/Form-Reserve/form.vue"
 const zoom = ref(18);
+const isActive = ref(false)
+
+const initReserve = (param:boolean) => {
+  isActive.value = param
+}
 </script>
 <style>
 @media (max-width: 600px) {
@@ -346,6 +360,10 @@ const zoom = ref(18);
   .change-direction {
     flex-direction: row;
   }
+}
+
+.reserve-button:hover {
+  cursor: pointer;
 }
 
 .center {

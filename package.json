@@ -13,7 +13,10 @@
     "@mdi/font": "7.0.96",
     "core-js": "^3.34.0",
     "roboto-fontface": "*",
+    "sweetalert2": "^11.10.8",
+    "v-mask": "^2.3.0",
     "vue": "^3.3.0",
+    "vue-the-mask": "^0.11.1",
     "vuetify": "^3.0.0"
   },
   "devDependencies": {
