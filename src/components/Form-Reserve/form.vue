@@ -102,16 +102,17 @@ const closeForm = () => {
 const submitForm = async():Promise<void> => {
   const cpfFormat = Cpf.value.replaceAll(/[.-]/g, "");
   const numberFormat = Phone.value.replaceAll(/[()-]/g, "");
-  const dateTimeFormat = format(FormattedDate, "Pp")
+  const dateTimeFormat = format(new Date(FormattedDate.value), "dd/MM/yyyy 'as' p")
   console.log(dateTimeFormat)
   const payload = {
     Name: Name.value,
     Email: Email.value,
     Cpf: cpfFormat,
     Phone: numberFormat,
-    FormattedDate: FormattedDate.value,
+    FormattedDate: dateTimeFormat,
     Ambiente: Ambiente.value.toLocaleLowerCase(),
   };
+  console.log(payload)
   try {
     await axios.post(`${import.meta.env.VITE_BASE_URL_API}/clientes`, payload)
     Swal.fire({
@@ -120,11 +121,11 @@ const submitForm = async():Promise<void> => {
   icon: "success"
 });
 } catch (error) {
+  emit("initReserve", false);
     Swal.fire({
   icon: "error",
   title: "Oops...",
-  text: "Something went wrong!",
-  footer: '<a href="#">Why do I have this issue?</a>'
+  text: "Não foi possivel concluir a reserva",
 });
 
   }

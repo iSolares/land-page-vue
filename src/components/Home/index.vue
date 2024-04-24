@@ -78,7 +78,7 @@
               >
               </v-img>
             </v-col>
-            <v-col class="flex-column  pt-0 pl-0 pb-0" cols="8">
+            <v-col class="flex-column pt-0 pl-0 pb-0" cols="8">
               <v-img eager src="../../assets/img/horariotitulo.png" />
               <v-img
                 eager
@@ -157,19 +157,7 @@
         <v-img eager cover src="../../assets/img/localizaçãobotao.png" />
       </v-col>
       <v-col cols="12">
-        <div class="map">
-          <l-map
-            ref="map"
-            v-model:zoom="zoom"
-            m
-            :center="[-12.98995518060895, -38.45681316447221]"
-          >
-            <l-tile-layer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              layer-type="base"
-              name="OpenStreetMap"
-            ></l-tile-layer>
-          </l-map>
+        <div id="map">
         </div>
       </v-col>
       <v-col cols="12">
@@ -184,7 +172,7 @@
           class="align-center"
           src="../../assets/img/fundofaçasuareserva.png"
         >
-        <v-row justify="center">
+          <v-row justify="center">
             <v-col class="d-flex" cols="12 pt-10 pb-4">
               <v-img
                 cover
@@ -210,10 +198,10 @@
     <v-dialog
       :model-value="isActive"
       @click:outside="isActive = false"
-        max-width="750"
-      >
-    <FormReserve @init-reserve="initReserve" :isActive="isActive"/>
-  </v-dialog>
+      max-width="750"
+    >
+      <FormReserve @init-reserve="initReserve" :isActive="isActive" />
+    </v-dialog>
     <v-row>
       <v-col class="pa-0" cols="12">
         <v-img
@@ -300,15 +288,48 @@
 </template>
 
 <script setup lang="ts">
-import { LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
+import { onMounted, onBeforeMount } from "vue";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
 import { ref } from "vue";
-import FormReserve from "@/components/Form-Reserve/form.vue"
+import FormReserve from "@/components/Form-Reserve/form.vue";
 const zoom = ref(18);
-const isActive = ref(false)
+const isActive = ref(false);
 
-const initReserve = (param:boolean) => {
-  isActive.value = param
-}
+const initReserve = (param: boolean) => {
+  isActive.value = param;
+};
+
+let map = null;
+let markers:any[] = [];
+
+const createMap = () => {
+  map = L.map("map").setView([-12.990328492281018, -38.45695696113678], 25);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+  L.marker([-12.98995518060895, -38.45681316447221],).addTo(
+    map
+  );
+  if (markers.length) {
+    setMarkers();
+  }
+};
+
+const setMarkers = () => {
+  markers.map((marker) => {
+    return L.marker([marker]);
+  });
+};
+onMounted(() => {
+  createMap();
+});
+onBeforeMount(() => {
+  if (map) {
+    map.remove;
+  }
+});
 </script>
 <style>
 @media (max-width: 600px) {
@@ -323,7 +344,7 @@ const initReserve = (param:boolean) => {
     margin-top: 18vh;
   }
 
-  .map {
+  #map {
     margin-left: auto;
     margin-right: auto;
     width: 35vh;
@@ -342,7 +363,7 @@ const initReserve = (param:boolean) => {
     display: none;
   }
 
-  .map {
+  #map {
     margin-left: auto;
     margin-right: auto;
     width: 140vh;
