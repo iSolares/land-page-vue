@@ -114,7 +114,7 @@ const submitForm = async():Promise<void> => {
   };
   console.log(payload)
   try {
-    await axios.post(`${import.meta.env.VITE_BASE_URL_API}/clientes`, payload)
+    await axios.post(`/clientes`, payload)
     Swal.fire({
   title: "Good job!",
   text: "You clicked the button!",

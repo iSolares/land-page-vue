@@ -299,7 +299,7 @@ const initReserve = (param: boolean) => {
   isActive.value = param;
 };
 
-let map = null;
+let map: any = null;
 // let markers:any[] = [];
 
 const createMap = () => {
