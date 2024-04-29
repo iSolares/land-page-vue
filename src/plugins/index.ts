@@ -4,6 +4,7 @@ import router from '../router'
 import VueTheMask from 'vue-the-mask'
 
 
+
 import type { App } from 'vue'
 
 export function registerPlugins (app: App) {

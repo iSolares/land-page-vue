@@ -293,7 +293,6 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { ref } from "vue";
 import FormReserve from "@/components/Form-Reserve/form.vue";
-const zoom = ref(18);
 const isActive = ref(false);
 
 const initReserve = (param: boolean) => {
@@ -301,7 +300,7 @@ const initReserve = (param: boolean) => {
 };
 
 let map = null;
-let markers:any[] = [];
+// let markers:any[] = [];
 
 const createMap = () => {
   map = L.map("map").setView([-12.990328492281018, -38.45695696113678], 25);
@@ -312,16 +311,16 @@ const createMap = () => {
   L.marker([-12.98995518060895, -38.45681316447221],).addTo(
     map
   );
-  if (markers.length) {
-    setMarkers();
-  }
+  // if (markers.length) {
+  //   setMarkers();
+  // }
 };
 
-const setMarkers = () => {
-  markers.map((marker) => {
-    return L.marker([marker]);
-  });
-};
+// const setMarkers = () => {
+//   markers.map((marker) => {
+//     return L.marker([marker]);
+//   });
+// };
 onMounted(() => {
   createMap();
 });
