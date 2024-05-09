@@ -103,7 +103,6 @@ const submitForm = async():Promise<void> => {
   const cpfFormat = Cpf.value.replaceAll(/[.-]/g, "");
   const numberFormat = Phone.value.replaceAll(/[()-]/g, "");
   const dateTimeFormat = format(new Date(FormattedDate.value), "dd/MM/yyyy 'as' p")
-  console.log(dateTimeFormat)
   const payload = {
     Name: Name.value,
     Email: Email.value,
@@ -114,7 +113,7 @@ const submitForm = async():Promise<void> => {
   };
   console.log(payload)
   try {
-    await axios.post(`/clientes`, payload)
+    await axios.post(`http://localhost:8080/clientes`, payload)
     Swal.fire({
   title: "Good job!",
   text: "You clicked the button!",
