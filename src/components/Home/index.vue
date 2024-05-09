@@ -300,7 +300,6 @@ const initReserve = (param: boolean) => {
 };
 
 let map: any = null;
-// let markers:any[] = [];
 
 const createMap = () => {
   map = L.map("map").setView([-12.990328492281018, -38.45695696113678], 25);
@@ -311,16 +310,10 @@ const createMap = () => {
   L.marker([-12.98995518060895, -38.45681316447221],).addTo(
     map
   );
-  // if (markers.length) {
-  //   setMarkers();
-  // }
+
 };
 
-// const setMarkers = () => {
-//   markers.map((marker) => {
-//     return L.marker([marker]);
-//   });
-// };
+
 onMounted(() => {
   createMap();
 });
